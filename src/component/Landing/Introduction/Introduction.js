@@ -1,5 +1,7 @@
-import React, { lazy} from "react"
+import React, { lazy} from "react";
+import { heroImage } from "../../../constant/constUrl";
 const Header = lazy(() => import("../../common/Header/Header"));
+
 
 function Introduction() {
     return (
@@ -18,7 +20,7 @@ function Introduction() {
                     </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                    <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
+                    <img class="object-cover object-center rounded" alt="hero" src={ heroImage }/>
                 </div>
             </div>
         </section>
@@ -27,3 +29,7 @@ function Introduction() {
 }
 
 export default Introduction;
+
+
+
+

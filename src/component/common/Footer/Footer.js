@@ -13,9 +13,11 @@ function Footer() {
       <a class="ml-3 hover:text-gray-400 " href="/about">
         About
       </a>
-      <a class="ml-3 hover:text-gray-400" href="/contact">
-        
+      <a class="ml-3 hover:text-gray-400" href="/contact">  
         Contact Us
+      </a>
+      <a class="ml-3 hover:text-gray-400" href="/resources">       
+        Free-Resources
       </a>
     </span>
   </div>
