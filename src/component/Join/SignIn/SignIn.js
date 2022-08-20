@@ -28,13 +28,14 @@ function SignIn(){
             setEmailRegistered(false);
         }
         setTimeout(()=>setEmailRegistered(true),3000);
+        setTimeout(()=>setIsLoggedIn(false),3000);
 
     }
     return (
         <section className="signin">
         <Header></Header>
         <SignInForm submitFunction={submit}/>
-        {isLoggedIn ?<p> </p>:<p className="mb-10 text-green-500 text-center">SignIn Successful</p>}
+        {isLoggedIn ?<p className="mb-10 text-green-500 text-center"> SignIn Successful </p>:<p> </p>}
         {emailRegistered ?<p> </p>:<p className="mb-10 text-green-500 text-center">The Enetered Email is not Registered With us</p>}
         <Footer></Footer>
         </section>
