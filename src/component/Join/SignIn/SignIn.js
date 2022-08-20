@@ -17,10 +17,6 @@ function SignIn(){
         e.status = "pending";
         console.log(e);
         const { email, password,role} = e.target.elements;
-        let details = {
-            email: email.value,
-            password: password.value
-        };
         let foundUser = (role.value==="Student")?await  getDataSignIn(findStudent,{ params: {email: email.value}}):await  getDataSignIn(findInterviewer,{ params: {email: email.value}});
         console.log(foundUser);
         if (foundUser.status ==="OLD_USER"){
@@ -38,6 +34,7 @@ function SignIn(){
         <section className="signin">
         <Header></Header>
         <SignInForm submitFunction={submit}/>
+        {isLoggedIn ?<p> </p>:<p className="mb-10 text-green-500 text-center">SignIn Successful</p>}
         {emailRegistered ?<p> </p>:<p className="mb-10 text-green-500 text-center">The Enetered Email is not Registered With us</p>}
         <Footer></Footer>
         </section>
