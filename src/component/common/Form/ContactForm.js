@@ -27,7 +27,9 @@ function ContactForm({ submitFunction }){
                         <textarea rows="10" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message" required />
                     </div>
                 </div>
-                <button class="shadow bg-rose-300 hover:bg-rose-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">Send Message</button>
+                <div class="flex items-center justify-center mb-2">
+                    <button class="shadow bg-rose-300 hover:bg-rose-200 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded " type="submit">Send Message</button>
+                </div>
             </form>
         </div>
     );

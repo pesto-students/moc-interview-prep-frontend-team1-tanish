@@ -3,7 +3,7 @@ import React from "react";
 function Interviewer () {
     return(
         <section class="text-gray-600 body-font bg-rose-50">
-            <h2 class="py-8 title-font sm:text-3xl text-3xl mb-4 font-medium text-gray-900">Meet our Interviewers</h2>
+            <h2 class="py-8 title-font sm:text-3xl text-3xl mb-4 font-medium text-gray-900 text-center">Meet our Interviewers</h2>
             <div class="container px-5 pt-19 pb-20 mx-auto">
                 <div class="flex flex-wrap -m-4">
                     <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">

@@ -44,7 +44,7 @@ function Contact (){
             {/* <section>{fallback}</section> */}
             <section id="query">
             <ContactForm submitFunction={submit}/>
-            {loading ?<p className="mb-10 text-green-500">Message Sent Succesfully</p>:<p></p>}
+            {loading ?<p className="mb-10 text-green-500 text-center">Message Sent Succesfully</p>:<p></p>}
             </section>
             <Footer></Footer>
         </section>
