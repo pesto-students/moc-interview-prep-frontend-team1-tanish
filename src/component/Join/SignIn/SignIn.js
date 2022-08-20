@@ -18,9 +18,8 @@ function SignIn(){
         console.log(e);
         const { email, password,role} = e.target.elements;
         let foundUser = (role.value==="Student")?await  getDataSignIn(findStudent,{ params: {email: email.value}}):await  getDataSignIn(findInterviewer,{ params: {email: email.value}});
-        console.log(foundUser);
         if (foundUser.status ==="OLD_USER"){
-            if (foundUser.data.password === password.value){
+            if (foundUser.res.data.password === password.value){
                 setIsLoggedIn(true);
             }
         
