@@ -1,5 +1,7 @@
 import React, { lazy} from "react";
+import {useSelector} from "react-redux";
 import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -8,15 +10,23 @@ const About = lazy(() => import("../component/About/About"));
 const Contact = lazy(() => import("../component/Contact/Contact"));
 const SignUp = lazy(() =>import("../component/Join/SignUp/SignUp"));
 const SignIn = lazy(() =>import("../component/Join/SignIn/SignIn"));
+const InterviewerDashboard = lazy(() =>import("../component/Dashboard/Interviewer/Interviewer"));
+const StudentDashboard = lazy(() =>import("../component/Dashboard/Student/Student"));
 
 function Routes() {
+
+    const { isLoggedIn } = useSelector((state) => state.auth);
     return(
         <div>
-             <PublicRoute exact path="/" element={<Landing/>} />
-             <PublicRoute exact path="/about" element={<About/>} />
-             <PublicRoute exact path="/contact" element={<Contact/>} />
-             <PublicRoute exact path="/signup" element={<SignUp/>} />
-             <PublicRoute exact path="/signin" element={<SignIn/>} />
+             <PublicRoute  path="/" element={<Landing/>} />
+             <PublicRoute  path="/about" element={<About/>} />
+             <PublicRoute  path="/contact" element={<Contact/>} />
+             <PublicRoute  path="/signup" element={<SignUp/>} />
+             <PublicRoute  path="/signin" element={<SignIn/>} />
+             {/* <PublicRoute  path="/Interviewer/dashboard" element={<InterviewerDashboard/>} /> */}
+             <PrivateRoute path="/Interviewer/dashboard" element={<InterviewerDashboard/>} loggedIn={isLoggedIn}/>
+             <PrivateRoute path="/Student/dashboard" element={<StudentDashboard/>} loggedIn={isLoggedIn}/>
+             {/* <PrivateRoute  path="/Interviewer/dashboard" page = {<InterviewerDashboard/>} /> */}
         </div>
     );
 }

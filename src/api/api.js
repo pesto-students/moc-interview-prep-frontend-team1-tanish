@@ -44,3 +44,5 @@ export async function insertData(url, data) {
       return { status: "failure", err: "Get Data Failed " };
     }
   }
+
+

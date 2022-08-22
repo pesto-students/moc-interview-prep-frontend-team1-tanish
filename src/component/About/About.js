@@ -9,7 +9,7 @@ function About (){
     return (
         <div>
             <Header/>
-            <section class="pt-20 pb-10 bg-gradient-to-r from-zinc-200 to-rose-50">
+            <section class="pt-20 pb-10 bg-gradient-to-r from-zinc-200 to-rose-50 text-center">
                 <h2 class="title-font sm:text-3xl text-3xl mb-4 font-medium text-gray-900">
                     We are <span class="text-rose-400">Mock on Call</span>
                 </h2>

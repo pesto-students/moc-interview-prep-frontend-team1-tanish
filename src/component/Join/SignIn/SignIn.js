@@ -1,7 +1,11 @@
-import {lazy,useState} from "react";
+import {lazy,useEffect,useState} from "react";
+import { Navigate } from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
 import SignInForm from "../../common/Form/SignInForm";
-import { getDataSignIn } from "../../../api/api";
-import {findStudent,findInterviewer} from "../../../constant/apiUrl";
+
+
+import {login} from "../../../Redux/slices/auth";
+import {clearMessage} from "../../../Redux/slices/message";
 
 
 
@@ -9,34 +13,40 @@ const Header = lazy(() => import("../../common/Header/Header"));
 const Footer = lazy(() => import("../../common/Footer/Footer"));
 
 function SignIn(){
-    let [emailRegistered,setEmailRegistered] = useState(true);
-    let [isLoggedIn,setIsLoggedIn] = useState(false);
+    const { isLoggedIn ,role} = useSelector((state) => state.auth);
+    const { message } = useSelector((state) => state.message);
+
+    // let [isSignedIn,setIsSignedIn] = useState(false);
+    // useEffect(() =>{
+    //     setIsSignedIn(isLoggedIn);
+    // },[isLoggedIn]);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(clearMessage());
+    }, [dispatch]);
 
     const submit = async(e) => {
         e.preventDefault();
-        e.status = "pending";
-        console.log(e);
-        const { email, password,role} = e.target.elements;
-        let foundUser = (role.value==="Student")?await  getDataSignIn(findStudent,{ params: {email: email.value}}):await  getDataSignIn(findInterviewer,{ params: {email: email.value}});
-        if (foundUser.status ==="OLD_USER"){
-            if (foundUser.res.data.password === password.value){
-                setIsLoggedIn(true);
-            }
-        
-        }else{
-            setEmailRegistered(false);
-        }
-        setTimeout(()=>setEmailRegistered(true),3000);
-        setTimeout(()=>setIsLoggedIn(false),3000);
+        const { email, password,role } = e.target.elements;  
+
+        console.log(email.value);  
+        console.log(password.value);   
+        console.log(role.value)  
+        dispatch(login({ email, password,role}));
+          
 
     }
+    if (isLoggedIn) {
+        return <Navigate to={`/${role}/dashboard`} />;
+    }
     return (
-        <section className="signin">
-        <Header></Header>
-        <SignInForm submitFunction={submit}/>
-        {isLoggedIn ?<p className="mb-10 text-green-500 text-center"> SignIn Successful </p>:<p> </p>}
-        {emailRegistered ?<p> </p>:<p className="mb-10 text-green-500 text-center">The Enetered Email is not Registered With us</p>}
-        <Footer></Footer>
+          <section className="signin">
+            <Header></Header>
+            <SignInForm submitFunction={submit}/>
+            {message && (<p className="mb-10 text-green-500 text-center">{message}</p>)}
+            <Footer></Footer>
         </section>
     )
 };
