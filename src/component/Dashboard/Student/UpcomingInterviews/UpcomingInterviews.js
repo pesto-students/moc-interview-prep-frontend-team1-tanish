@@ -12,14 +12,19 @@ function UpcomingInterviews() {
     let [interviews, setInterviews] = useState([]);
     const {user:currentUser,isLoggedIn} = useSelector((state) => state.auth);
 
-    useEffect(()=> async() =>{
-        let response = await getDataAll(getInterviews);
-        if(response.res.data){
-        let data= response.res.data;
+    useEffect(()=> {
+        (async() => {
+          let response = await getDataAll(getInterviews);
+          if(response.res.data){
+          let data= response.res.data;
             setInterviews(
-            data.filter((e) => e.student.id === currentUser._id)
+              data.filter((e) => e.student.id === currentUser._id)
             );
-        }  
+          }
+        })();
+        return () =>{
+
+        } ; 
         // eslint-disable-next-line react-hooks/exhaustive-deps 
     },[isLoggedIn])
     interviews = interviews.filter((e) => e.status !== "completed");

@@ -12,12 +12,17 @@ function Interviewerprofile (){
     let [update, setUpdate] = useState(false);
     const { role} = useSelector((state) => state.auth);
 
-    useEffect(() =>async()=>{
-        let response = await getDataAll(getInterviewerById+profileId);
-        if(response.res.data){
-         let data= response.res.data;
-         setInterviewer(data);  
-        } 
+    useEffect(() => {
+        (async()=>{
+            let response = await getDataAll(getInterviewerById+profileId);
+            if(response.res.data){
+                 let data= response.res.data;
+                setInterviewer(data);  
+            } 
+        })();
+        return() =>{
+
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps  
     },[]);
 

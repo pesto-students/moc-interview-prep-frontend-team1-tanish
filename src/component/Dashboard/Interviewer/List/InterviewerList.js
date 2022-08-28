@@ -12,13 +12,18 @@ function InterviewerList(){
     let [interviewers, setInterviewer] = useState([]);
     let [interviewerList, setInterviewerList] = useState([]);
 
-    useEffect(()=> async() =>{
-        let response = await getDataAll(getInterviewers);
-        if(response.res.data){
-         let data= response.res.data;
-         setInterviewer(data); 
-         setInterviewerList(data)      
-        } 
+    useEffect(()=>{
+        (async() =>{
+            let response = await getDataAll(getInterviewers);
+            if(response.res.data){
+                let data= response.res.data;
+                setInterviewer(data); 
+                setInterviewerList(data)      
+            } 
+        })();
+        return() =>{
+
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps  
     },[isLoggedIn]);
     
