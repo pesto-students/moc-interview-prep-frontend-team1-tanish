@@ -12,13 +12,18 @@ function StudentList(){
     let [students, setStudents] = useState([]);
     let [studentList, setStudentList] = useState([]);
 
-    useEffect(()=> async() =>{
-        let response = await getDataAll(getStudents);
-        if(response.res.data){
-         let data= response.res.data;
-         setStudents(data); 
-         setStudentList(data)      
-        } 
+    useEffect(()=> {
+        (async() =>{
+            let response = await getDataAll(getStudents);
+            if(response.res.data){
+                let data= response.res.data;
+                setStudents(data); 
+                setStudentList(data)      
+            } 
+        })();
+        return() =>{
+
+        }; 
         // eslint-disable-next-line react-hooks/exhaustive-deps  
     },[isLoggedIn]);
     
