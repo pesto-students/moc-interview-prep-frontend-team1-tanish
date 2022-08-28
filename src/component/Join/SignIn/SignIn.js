@@ -15,12 +15,7 @@ const Footer = lazy(() => import("../../common/Footer/Footer"));
 function SignIn(){
     const { isLoggedIn ,role} = useSelector((state) => state.auth);
     const { message } = useSelector((state) => state.message);
-
-    // let [isSignedIn,setIsSignedIn] = useState(false);
-    // useEffect(() =>{
-    //     setIsSignedIn(isLoggedIn);
-    // },[isLoggedIn]);
-
+    
     const dispatch = useDispatch();
 
     useEffect(() => {

@@ -1,8 +1,15 @@
-import React, { lazy} from "react";
-import {Navigate} from "react-router-dom";
+import React,{lazy} from "react";
+import {Navigate,Route,Routes} from "react-router-dom";
 import {useSelector} from "react-redux";
 
-const Dashboard = lazy(() => import("../Interviewer/dashboard/dashboard"));
+import Dashboard from "../Interviewer/dashboard/dashboard";
+import InterviewerNav from  "../../common/SideNav/InterviewerNav";
+import UpcomingInterviews from "./UpcomingInterviews/UpcomingInterviews";
+import StudentList from "../Student/List/StudentList";
+
+
+const Interviewerprofile = lazy(() =>import("./Profile/InterviewerProfile"));
+const Studentprofile = lazy (() => import("../Student/Profile/StudentProfile"));
 
 function Interviewer (){
     const { isLoggedIn} = useSelector((state) => state.auth);
@@ -10,10 +17,17 @@ function Interviewer (){
         return <Navigate to= "/signin"/>;
     }
     return (
-        <div class="interviewer">
-        <Dashboard/>    
+        <div>
+        <InterviewerNav/>
+        <Routes>
+            <Route  path="/" element={<Dashboard/>} />
+            <Route  path="/dashboard" element={<Dashboard/>} />
+            <Route  path="/upcoming" element={<UpcomingInterviews/>} />
+            <Route  path="/studentlist" element={<StudentList/>} />
+            <Route path= {`/interviewerprofile/:profileId`}  element={<Interviewerprofile/>}></Route>
+            <Route path= {`/studentprofile/:profileId`}  element={<Studentprofile/>}></Route>
+        </Routes>
         </div>
-
     )
 }
 

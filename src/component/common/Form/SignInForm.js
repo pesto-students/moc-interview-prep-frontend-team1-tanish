@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 function SignInForm ({submitFunction}){
     return (
@@ -34,7 +35,7 @@ function SignInForm ({submitFunction}){
                                 </form>
                         </div>
                         <p class="text-center my-4">
-                            <a href="/signup" class="text-grey-dark text-sm no-underline hover:text-grey-darker">Does not  have an account ? <span class="underline underline-offset-4 text-blue-500">SignUp</span></a>
+                            <Link to="/signup" class="text-grey-dark text-sm no-underline hover:text-grey-darker">Does not  have an account ? <span class="underline underline-offset-4 text-blue-500">SignUp</span></Link>
                         </p>
                     </div>
                 </div>

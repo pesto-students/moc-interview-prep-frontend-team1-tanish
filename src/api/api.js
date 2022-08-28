@@ -16,21 +16,30 @@ export async function insertData(url, data) {
     console.log("inside getData");
     try {
       let res = await axios.get(url,data);
-      console.log(res.data);
+      // console.log(res.data);
       if(res.data){
         return { status: "Duplicate", res };
       }else{
         return { status: "Unique", res };
       }     
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return { status: "failure", err: "Get Data Failed " };
+    }
+  }
+  export async function getDataAll(url) {
+    try {
+      console.log("inside geDataAll try")
+      let res = await axios.get(url);
+      return { status: "success", res };
+    } catch (err) {
+      return { status: "failure", err: "Get Data Failed" };
     }
   }
 
   //get call for signin 
   export async function getDataSignIn(url,data) {
-    console.log("inside getData");
+    // console.log("inside getData");
     try {
       let res = await axios.get(url,data);
       console.log(res.data);
@@ -40,7 +49,7 @@ export async function insertData(url, data) {
         return { status: "NEW_USER", res };
       }     
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return { status: "failure", err: "Get Data Failed " };
     }
   }

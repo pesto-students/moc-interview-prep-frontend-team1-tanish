@@ -48,6 +48,14 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
+  reducers: {
+    logout: (state) => {
+      console.log("inside logout");
+      state.isLoggedIn = false;
+      state.user = null;
+      state.role = null;
+    },
+  },
   extraReducers: {
     [login.fulfilled]: (state, action) => {
       console.log("inside fullfilled");
@@ -65,10 +73,13 @@ const authSlice = createSlice({
       console.log("inside reject");
       state.isLoggedIn = false;
       state.user = null;
-      state.user = null;
+      state.role = null;
     },
   },
 });
 
 const { reducer } = authSlice;
+export const { logout } = authSlice.actions;
 export default reducer;
+
+

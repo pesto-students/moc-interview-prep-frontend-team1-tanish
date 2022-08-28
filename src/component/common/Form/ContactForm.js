@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function ContactForm({ submitFunction }){
     return (
         <div class="max-w-screen-md mx-auto p-5 ">

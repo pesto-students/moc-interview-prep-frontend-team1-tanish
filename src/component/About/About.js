@@ -1,4 +1,6 @@
-import { lazy } from "react";
+import { lazy,Suspense } from "react";
+import {Link} from "react-router-dom";
+import { fallback } from "../../constant/navList";
 
 
 
@@ -9,6 +11,7 @@ function About (){
     return (
         <div>
             <Header/>
+            <Suspense fallback={fallback}>
             <section class="pt-20 pb-10 bg-gradient-to-r from-zinc-200 to-rose-50 text-center">
                 <h2 class="title-font sm:text-3xl text-3xl mb-4 font-medium text-gray-900">
                     We are <span class="text-rose-400">Mock on Call</span>
@@ -39,10 +42,11 @@ function About (){
                     experienced individuals in their field to be guided in the right
                     way to overcome any gaps in their preparation.
                 </p>
-                    <button class="text-white bg-rose-300 border-0 py-2 px-6 mt-4 focus:outline-none hover:bg-rose-200 rounded text-lg"> <a href='/signIn'>Join Us</a> </button>
+                    <button class="text-white bg-rose-300 border-0 py-2 px-6 mt-4 focus:outline-none hover:bg-rose-200 rounded text-lg"> <Link to='/signin'>Join Us</Link> </button>
                 
                 </div>
             </section>
+            </Suspense>
             <Footer/>
         </div>
     );
