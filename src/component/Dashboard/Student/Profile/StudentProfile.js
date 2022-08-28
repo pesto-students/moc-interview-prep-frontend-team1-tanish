@@ -16,9 +16,11 @@ function Studentprofile (){
     console.log(getStudentById+profileId);
     useEffect(() =>async()=>{
         let response = await getDataAll(getStudentById+profileId);
+        console.log(response);
         if(response.res.data){
          let data= response.res.data;
-         setStudent(data);  
+         setStudent(data); 
+         console.log(data); 
         } 
         console.log(student);
         // eslint-disable-next-line react-hooks/exhaustive-deps  
