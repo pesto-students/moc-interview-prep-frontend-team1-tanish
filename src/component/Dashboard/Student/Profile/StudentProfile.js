@@ -14,15 +14,20 @@ function Studentprofile (){
     const { role} = useSelector((state) => state.auth);
 
     console.log(getStudentById+profileId);
-    useEffect(() =>async()=>{
-        let response = await getDataAll(getStudentById+profileId);
-        console.log(response);
-        if(response.res.data){
-         let data= response.res.data;
-         setStudent(data); 
-         console.log(data); 
-        } 
-        console.log(student);
+    useEffect(() =>{
+        (async()=>{
+            let response = await getDataAll(getStudentById+profileId);
+            console.log(response);
+            if(response.res.data){
+                 let data= response.res.data;
+                setStudent(data); 
+                console.log(data); 
+            } 
+            console.log(student);
+        })();
+        return() =>{
+
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps  
     },[]);
 
