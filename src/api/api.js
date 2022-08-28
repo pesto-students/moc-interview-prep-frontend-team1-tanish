@@ -16,21 +16,22 @@ export async function insertData(url, data) {
     console.log("inside getData");
     try {
       let res = await axios.get(url,data);
-      // console.log(res.data);
+      console.log(res.data);
       if(res.data){
         return { status: "Duplicate", res };
       }else{
         return { status: "Unique", res };
       }     
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       return { status: "failure", err: "Get Data Failed " };
     }
   }
   export async function getDataAll(url) {
+    console.log("inside geDataAll try");
     try {
-      console.log("inside geDataAll try")
       let res = await axios.get(url);
+      console.log(res);
       return { status: "success", res };
     } catch (err) {
       return { status: "failure", err: "Get Data Failed" };
@@ -39,7 +40,7 @@ export async function insertData(url, data) {
 
   //get call for signin 
   export async function getDataSignIn(url,data) {
-    // console.log("inside getData");
+    console.log("inside getData");
     try {
       let res = await axios.get(url,data);
       console.log(res.data);
