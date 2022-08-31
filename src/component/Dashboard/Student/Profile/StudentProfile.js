@@ -25,20 +25,26 @@ function Studentprofile (){
                 setStudent(data); 
                 console.log(data); 
             } 
-            if (Object.keys(student).length > 0) {
-                Object.keys(studentForm).forEach(
-                  (key) => (studentForm[key] = student[key])
-                );
-            }
-            console.log("studentForm");
-            console.log(studentForm);
-            console.log(student);
+            // if (Object.keys(student).length > 0) {
+            //     Object.keys(studentForm).forEach(
+            //       (key) => (studentForm[key] = student[key])
+            //     );
+            // }
+            // console.log("studentForm");
+            // console.log(studentForm);
+            // console.log(student);
         })();
         return() =>{
 
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps  
     },[]);
+
+    if (Object.keys(student).length > 0) {
+            Object.keys(studentForm).forEach(
+              (key) => (studentForm[key] = student[key])
+            );
+    }
 
     const submit = (e) => {
         const { name, email,contact,degree, experience,company,skills,image, about,topics} = e.target.elements;
