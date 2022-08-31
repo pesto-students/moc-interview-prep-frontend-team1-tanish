@@ -53,6 +53,17 @@ export async function insertData(url, data) {
       // console.log(err);
       return { status: "failure", err: "Get Data Failed " };
     }
+  };
+
+
+  // Update Call
+export async function updateData(url, data) {
+  try {
+    let res = await axios.post(url, data);
+    return { status: "success", res };
+  } catch (err) {
+    return { status: "failure", err: "Updating Data Failed" };
   }
+}
 
 

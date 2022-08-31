@@ -24,4 +24,8 @@ export const getInterviewerById = baseUrl + "/interviewer/getData/";
 export const getStudentById = baseUrl + "/student/getData/";
 
 
+export const updateInterviewer = baseUrl + "/interviewer/updateData/";
+export const updateStudent = baseUrl + "/student/updateData/";
+
+
 
