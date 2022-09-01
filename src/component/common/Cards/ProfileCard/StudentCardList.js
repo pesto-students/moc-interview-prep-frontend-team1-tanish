@@ -5,7 +5,10 @@ function StudentCardList({student,profileOwner}){
     return(
         <div class="w-full bg-white rounded-lg p-4 flex flex-col justify-center items-center border border-rose-300">
             <div class="mb-4">
-                <img alt="testimonial" class="object-center object-cover rounded-full h-24 w-24" src={student.image}/>
+                {student.image?
+                    <img alt="testimonial" class="object-center object-cover rounded-full h-24 w-24" src={student.image}/>
+                    :<img alt="testimonial" class="object-center object-cover rounded-full h-24 w-24" src="https://res.cloudinary.com/mockoncall/image/upload/v1662030947/users/360_F_364623623_ERzQYfO4HHHyawYkJ16tREsizLyvcaeg_ddg516.jpg"/>
+                }
             </div>
             <div class="text-center mb-2">
                 <p class="text-xl text-gray-700  mb-2">{student.name}, {student.degree}</p>

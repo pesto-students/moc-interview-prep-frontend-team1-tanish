@@ -119,7 +119,10 @@ function Interviewerprofile (){
             {interviewer ? (
                 <div className="int-profile-container ml-72 mt-16 flex text-gray-500 ">
                     <section className="left-profile px-8 py-8 ">
-                        <img src={interviewer.image} alt="profile" className="object-center object-cover rounded-full h-28 w-28"/>
+                       {interviewer.image?
+                            <img src={interviewer.image} alt="profile" className="object-center object-cover rounded-full h-28 w-28"/>
+                            :<img src="https://res.cloudinary.com/mockoncall/image/upload/v1662030947/users/360_F_364623623_ERzQYfO4HHHyawYkJ16tREsizLyvcaeg_ddg516.jpg" alt="profile" className="object-center object-cover rounded-full h-28 w-28"/>
+                       }
                         <p className="my-1.5">{interviewer.name}</p>
                         <p className="my-1.5" style={{ textTransform: "lowercase" }}>
                             {interviewer.email}

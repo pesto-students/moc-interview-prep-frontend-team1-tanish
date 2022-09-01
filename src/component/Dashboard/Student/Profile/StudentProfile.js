@@ -126,7 +126,10 @@ function Studentprofile (){
                     {student ? (
                         <div className="int-profile-container ml-72 mt-16 flex text-gray-500 ">
                             <section className="left-profile px-8 py-8 ">
-                                <img src={student.image} alt="profile" className="object-center object-cover rounded-full h-28 w-28"/>
+                                {student.image?
+                                    <img src={student.image} alt="profile" className="object-center object-cover rounded-full h-28 w-28"/>
+                                   : <img src="https://res.cloudinary.com/mockoncall/image/upload/v1662030947/users/360_F_364623623_ERzQYfO4HHHyawYkJ16tREsizLyvcaeg_ddg516.jpg" alt="profile" className="object-center object-cover rounded-full h-28 w-28"/>
+                                }
                                 <p className="my-1.5">{student.name}</p>
                                 <p className="my-1.5" style={{ textTransform: "lowercase" }}>
                                     {student.email}

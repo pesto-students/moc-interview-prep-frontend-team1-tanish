@@ -22,7 +22,10 @@ function InterviewerNav(){
             <div class="pt-4 pb-2 px-6">
                 <div class="flex items-center">
                     <div class="shrink-0">
-                        <img alt="testimonial" class="w-12 h-12 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={currentUser.image}/>
+                        {currentUser.image?
+                          <img alt="testimonial" class="w-12 h-12 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={currentUser.image}/>
+                          :<img alt="testimonial" class="w-12 h-12 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://res.cloudinary.com/mockoncall/image/upload/v1662030947/users/360_F_364623623_ERzQYfO4HHHyawYkJ16tREsizLyvcaeg_ddg516.jpg"/>
+                        }
                     </div>
                     <div class="grow ml-3">
                         <p class="text-lg text-rose-300 text-center mb-3">{currentUser.name}</p>
