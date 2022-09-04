@@ -11,14 +11,4 @@ const PrivateRoute = ({ component: Component, loggedIn, ...rest }) => (
     </Routes>         
 )
 
-// const PrivateRoute = ({ page}) => {
-//     let {isLoggedIn} = useSelector((state) => state.auth);
-//     console.log(isLoggedIn);
-//     return isLoggedIn? page : <Navigate to="/signin" />;
-            
-// }
-
-
-
-
 export default PrivateRoute;

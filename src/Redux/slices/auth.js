@@ -34,11 +34,6 @@ export const login = createAsyncThunk(
     }
   }
 );
-
-// export const logout = createAsyncThunk("auth/logout", async () => {
-//   await AuthService.logout();
-// });
-
 const initialState = {
     isLoggedIn:false,
     user:null,

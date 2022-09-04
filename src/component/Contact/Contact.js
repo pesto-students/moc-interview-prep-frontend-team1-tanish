@@ -1,5 +1,4 @@
 import { lazy,useState} from "react";
-// import { fallback } from "../../constant/navList";
 import ContactForm from "../common/Form/ContactForm";
 import { insertQuery } from "../../constant/apiUrl";
 import { insertData } from "../../api/api";
