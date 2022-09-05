@@ -19,7 +19,7 @@ function Introduction() {
                     <p class="mb-8 leading-relaxed text-lg">Talk to the people who believe in helping others.</p>
                     <div class="flex justify-center">
                         <button class="inline-flex text-white bg-rose-300 border-0 py-2 px-6 focus:outline-none hover:bg-rose-200 rounded text-lg"> <Link to='/signin'>Sign-In</Link> </button>
-                        <button class="ml-4 inline-flex text-gray-900 bg-gray-50 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><Link to='/resources'>Free-Resources</Link></button>
+                        <button class="ml-4 inline-flex text-gray-900 bg-gray-50 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><Link to='/dummylogin'>Dummy Login</Link></button>
                     </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

@@ -36,11 +36,9 @@ function SignUp (){
         if (foundUser.status ==="Unique"){
             let response = (role.value==="Student") ? await insertData(insertStudent, details):await insertData(insertInterviewer, details);
             if (response.status === "success") {
-                console.log(response.status);
                 alertActionCreator.setMessage(dispatch, "Sign up succesfull");
                 setIsSignedUp(true);
             } else {
-                console.log(response.status);
                 alertActionCreator.setError(dispatch, "Sign up failed");
                 setIsSignedUp(false);
             }

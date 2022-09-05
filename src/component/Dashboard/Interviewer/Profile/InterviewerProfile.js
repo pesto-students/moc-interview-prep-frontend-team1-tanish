@@ -21,14 +21,6 @@ function Interviewerprofile (){
                  let data= response.res.data;
                 setInterviewer(data);  
             }
-            // if (Object.keys(interviewer).length > 0) {
-            //     Object.keys(studentForm).forEach(
-            //       (key) => (studentForm[key] = interviewer[key])
-            //     );
-            // }
-            // console.log("studentForm");
-            // console.log(studentForm);
-            // console.log(interviewer); 
         })();
         return() =>{
 

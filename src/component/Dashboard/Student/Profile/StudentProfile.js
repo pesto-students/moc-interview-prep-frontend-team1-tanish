@@ -19,20 +19,10 @@ function Studentprofile (){
     useEffect(() =>{
         (async()=>{
             let response = await getDataAll(getStudentById+profileId);
-            console.log(response);
             if(response.res.data){
                  let data= response.res.data;
                 setStudent(data); 
-                console.log(data); 
             } 
-            // if (Object.keys(student).length > 0) {
-            //     Object.keys(studentForm).forEach(
-            //       (key) => (studentForm[key] = student[key])
-            //     );
-            // }
-            // console.log("studentForm");
-            // console.log(studentForm);
-            // console.log(student);
         })();
         return() =>{
 

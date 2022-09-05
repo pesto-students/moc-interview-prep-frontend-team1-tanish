@@ -9,8 +9,7 @@ const Interviews = lazy (() =>import("../dashboard/Interviews/Interviews"));
 function  StudentDashboard (){
     const {user:currentUser,isLoggedIn} = useSelector((state) => state.auth);
     let [student, setStudent] = useState([]);
-    //console.log(currentUser.analytics);
-
+  
     useEffect(() => {
           if(isLoggedIn){
             console.log(currentUser.analytics);
