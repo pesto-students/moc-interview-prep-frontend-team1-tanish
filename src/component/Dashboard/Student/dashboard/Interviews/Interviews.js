@@ -50,7 +50,7 @@ function Interviews (){
                     <p>{e.topic}</p>
                   </span>
                   <span>
-                    <a className="text-rose-300" href={e.meetingUrl}>
+                    <a className="text-rose-300" href={e.meetingUrl} target="_blank" rel="noreferrer">
                       Join Meets
                     </a>
                   </span>

@@ -21,7 +21,6 @@ function DummyLogInForm ({submitFunction}){
                                             <option value="Student"/>
                                             <option value="Interviewer"/>
                                         </datalist>
-                                        <p>{`You selected ${value}`}</p>
                                     </div>
                                     {value?
                                         (<> 
