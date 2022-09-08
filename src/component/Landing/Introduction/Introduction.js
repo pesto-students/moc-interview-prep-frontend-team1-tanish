@@ -1,12 +1,15 @@
-import React, { lazy} from "react";
+import React, { lazy,Suspense} from "react";
 import { heroImage } from "../../../constant/constUrl";
+import { fallback } from "../../../constant/navList";
+import {Link} from "react-router-dom";
 const Header = lazy(() => import("../../common/Header/Header"));
 
 
 function Introduction() {
     return (
         <div id="introduction">
-        <Header></Header>   
+        <Header></Header>
+        <Suspense fallback={fallback}>   
         <section class="text-gray-900 body-font bg-rose-100">
             <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -15,8 +18,8 @@ function Introduction() {
                     </h1>
                     <p class="mb-8 leading-relaxed text-lg">Talk to the people who believe in helping others.</p>
                     <div class="flex justify-center">
-                        <button class="inline-flex text-white bg-rose-300 border-0 py-2 px-6 focus:outline-none hover:bg-rose-200 rounded text-lg"> <a href='/signIn'>Sign-In</a> </button>
-                        <button class="ml-4 inline-flex text-gray-900 bg-gray-50 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><a href='/resources'>Free-Resources</a></button>
+                        <button class="inline-flex text-white bg-rose-300 border-0 py-2 px-6 focus:outline-none hover:bg-rose-200 rounded text-lg"> <Link to='/signin'>Sign-In</Link> </button>
+                        <button class="ml-4 inline-flex text-gray-900 bg-gray-50 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><Link to='/dummylogin'>Dummy Login</Link></button>
                     </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -24,6 +27,7 @@ function Introduction() {
                 </div>
             </div>
         </section>
+        </Suspense>
         </div>
     );
 }

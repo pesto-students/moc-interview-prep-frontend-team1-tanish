@@ -1,70 +1,183 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br  />
 
-## Available Scripts
+<p  align="center">
 
-In the project directory, you can run:
+<img  src="https://res.cloudinary.com/mockoncall/image/upload/v1660023218/M.O.C_1_hwtdig.png"  alt="Logo"  width="600"  height="200">
 
-### `npm start`
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+MOC (Mock On Call ) is a interview preparation platform,allowing users to engage with experts to guide and mentor to prepare best way possible.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Mission:**
 
-### `npm test`
+We provide a platform which enables users to engage with experts in their industry who can assist them in their interview preparation by conducting mock interviews
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Vision:**
 
-### `npm run build`
+To make the process of preparing for an interview simple , effective and affordable for everyone
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Goals:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   Provide valuable resources.
+-   Provide quality tests.
+-   Provide goof mock interviews.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Features:**
 
-### `npm run eject`
+-   Best in industry experts availability .
+-   Simple and consistent UI.
+-   Learn with our resources.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- TABLE OF CONTENTS -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Table of Contents
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  
 
-## Learn More
+1. [Demo](#demo)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. [Installation](#installation)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. [Technology Stack](#technology-stack)
 
-### Code Splitting
+4. [Authors](#authors)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. [License](#license)
 
-### Analyzing the Bundle Size
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br/>
 
-### Making a Progressive Web App
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Demo
 
-### Advanced Configuration
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[Live Demo](https://mockoncall.netlify.app/)
 
-### Deployment
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br/>
 
-### `npm run build` fails to minify
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please Note:
+
+  
+
+1. We recommend using this app in Google Chrome
+
+
+  
+  
+
+<br/>
+
+Test Credentials:
+
+ Dummy logins are added in the Dummy Login page  for all the user flows that includes Student Interviewer and admin can use the credential to login to respective roles .
+  
+
+# Installation
+
+  
+
+1. Clone the repo
+
+```sh
+
+git clone https://github.com/pesto-students/moc-interview-prep-frontend-team1-tanish.git
+
+```
+
+
+
+2. Install NPM packages
+
+```sh
+
+cd moc-interview-prep-frontend-team1-tanish && npm install
+
+```
+
+3. Run
+
+```sh
+
+npm start
+
+```
+
+4. Open http://localhost:3000 to view it in the browser
+
+  
+
+6. Run Test cases
+
+```sh
+
+npm test
+
+```
+
+<br/>
+
+  
+
+# Technology Stack
+
+  
+
+We tried to use a completely modern tech stack while testing out some new technologies that we had never used before. This resulted in a fast, performant, and easily-extensible web app that should be fairly future-proof for the coming next several years. We used:
+
+
+- [Axios](https://axios-http.com/docs/intro)
+
+- [React](https://reactjs.org/)
+
+- [Redux-toolkit](https://redux-toolkit.js.org/)
+
+## Tools and Libraries
+
+-   [Redux-Tool-Kit] - State Management
+-   [Sentry] - Error Tracking
+-   [Cypress] - End to End testing
+
+## [](https://github.com/pesto-students/mock-prep-n11-eta2-fe#api-integrations)API Integrations
+
+-   RazorPay - Payments
+-   Calendly - Slot Booking
+
+## [](https://github.com/pesto-students/mock-prep-n11-eta2-fe#mobile-responsive)Mobile Responsive
+
+-   Fits to Mobile Screen
+-   Fits to Tab Screen - Ipad
+-   Fits to Desktop
+
+  
+
+<br/>
+
+  
+
+# Authors
+
+  
+[Asha Manami](https://github.com/ashab96)
+<br />
+[Deepak Singh ](https://github.com/deepak-singh19/) 
+
+
+  
+
+  
+
+# License
+
+  
+
+[MIT](https://opensource.org/licenses/MIT)

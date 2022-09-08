@@ -5,10 +5,13 @@ const PublicRoute = ({ component: Component,...rest }) =>
 (  
     
     <Routes>
-    <Route {...rest} render={props => <Component {...props} />} />
+        <Route {...rest} render={props => <Component {...props} />} />
     </Routes>
    
 )
 
 
 export default PublicRoute;
+
+
+
