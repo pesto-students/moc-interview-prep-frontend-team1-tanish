@@ -79,7 +79,7 @@ Please Note:
 
 Test Credentials:
 
- Dummy logins are added in the Dummy Login page  for all the user flows that includes Student Interviewer and admin can use the credential to login to respective roles .
+Dummy logins are added in the login page for all the user flows that includes Student Interviewer.
   
 
 # Installation
