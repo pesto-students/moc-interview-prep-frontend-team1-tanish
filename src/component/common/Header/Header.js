@@ -6,7 +6,6 @@ import {useSelector} from "react-redux";
 function Header(){
    
   const { user:currentUser,isLoggedIn,role} = useSelector((state) => state.auth);
-   console.log(currentUser);
    return (
     <header class="text-gray-900 body-font  bg-rose-100">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -15,6 +14,7 @@ function Header(){
         </Link>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <Link to = "/contact" class="mr-5 hover:text-gray-400 ">Contact Us</Link>
+          <Link to = "/pricing" class="mr-5 hover:text-gray-400 ">Pricing</Link>
           {isLoggedIn?(
             <img alt="testimonial" class="mr-5 w-12  h-12 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={currentUser.image}/>
           ):(

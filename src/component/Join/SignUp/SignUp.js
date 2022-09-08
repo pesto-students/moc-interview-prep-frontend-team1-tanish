@@ -28,11 +28,7 @@ function SignUp (){
             password: password.value
         };
 
-    
-        console.log(details);
-        console.log(role.value==="Student");
         let foundUser = (role.value==="Student")?await  getData(findStudent,{ params: {email: email.value}}):await  getData(findInterviewer,{ params: {email: email.value}});
-        console.log(foundUser);
         if (foundUser.status ==="Unique"){
             let response = (role.value==="Student") ? await insertData(insertStudent, details):await insertData(insertInterviewer, details);
             if (response.status === "success") {
@@ -43,7 +39,6 @@ function SignUp (){
                 setIsSignedUp(false);
             }
         }else{
-            console.log("inside else part i.e duplicate");
             setUniqueUser(false);
         }
         setTimeout(()=>setUniqueUser(true),3000);

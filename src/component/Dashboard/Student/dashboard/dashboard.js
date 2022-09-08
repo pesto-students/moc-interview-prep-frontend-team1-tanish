@@ -12,7 +12,6 @@ function  StudentDashboard (){
   
     useEffect(() => {
           if(isLoggedIn){
-            console.log(currentUser.analytics);
             setStudent(currentUser);     
           }
         // eslint-disable-next-line react-hooks/exhaustive-deps  

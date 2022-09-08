@@ -11,6 +11,7 @@ const SignIn = lazy(() =>import("../component/Join/SignIn/SignIn"));
 const InterviewerDashboard = lazy(() =>import("../component/Dashboard/Interviewer/Interviewer"));
 const StudentDashboard = lazy(() =>import("../component/Dashboard/Student/Student"));
 const DummyLogIn = lazy (() => import("../component/Join/DummyLogIn/DummyLogin"));
+const Pricing = lazy(() => import("../component/Package/Package"));
 function Routes() {
 
     const { isLoggedIn } = useSelector((state) => state.auth);
@@ -22,6 +23,7 @@ function Routes() {
              <PublicRoute  path="/signup" element={<SignUp/>} />
              <PublicRoute  path="/signin" element={<SignIn/>} />
              <PublicRoute  path="/resources" element={<About/>} />
+             <PublicRoute  path="/pricing" element={<Pricing/>} />
              <PrivateRoute path="/Interviewer*" element={<InterviewerDashboard/>} loggedIn={isLoggedIn}/>
              <PrivateRoute path="/Student*" element={<StudentDashboard/>} loggedIn={isLoggedIn}/>
              <PublicRoute  path="/dummylogin" element={<DummyLogIn/>} />

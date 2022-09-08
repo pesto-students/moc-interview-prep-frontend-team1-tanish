@@ -47,7 +47,6 @@ function Interviewerprofile (){
             skills : skills.value.split(","),
             topics: topics.value.split(","),
         };
-        console.log(details);
         for (var key in details) {
             if (details[key] !== undefined) {
               interviewer[key] = details[key];

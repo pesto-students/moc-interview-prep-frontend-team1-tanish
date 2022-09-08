@@ -14,8 +14,7 @@ function Studentprofile (){
     let [student, setStudent] = useState({});
     let [update, setUpdate] = useState(false);
     const { role} = useSelector((state) => state.auth);
-
-    console.log(getStudentById+profileId);
+    
     useEffect(() =>{
         (async()=>{
             let response = await getDataAll(getStudentById+profileId);
@@ -50,7 +49,6 @@ function Studentprofile (){
             skills : skills.value.split(","),
             topics: topics.value.split(","),
         };
-        console.log(details);
         for (var key in details) {
             if (details[key] !== undefined) {
               student[key] = details[key];

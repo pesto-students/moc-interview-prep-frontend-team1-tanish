@@ -18,5 +18,4 @@ function App() {
     </div>
   );
 }
-// export default App;
 export default Sentry.withProfiler(App);

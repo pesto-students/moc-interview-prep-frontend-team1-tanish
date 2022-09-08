@@ -6,7 +6,6 @@ const PrivateRoute = ({ component: Component, loggedIn, ...rest }) => (
     
     
     <Routes>
-        console.log(loggedIn);
         <Route {...rest} render={props => ( loggedIn ? <Component {...props} />  : <Navigate  to = "/signin" replace/>)}/>  
     </Routes>         
 )

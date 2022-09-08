@@ -42,7 +42,7 @@ function InterviewerList(){
     return(
         <div className="studentListContainer">
             <DashboardHeader
-                title={"Student List"}
+                title={"Interviewer List"}
                 icon={<MdListAlt class= "text-rose-300 text-2xl mt-1"/>}
                 onSearch={onSearch}
             />

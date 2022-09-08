@@ -8,7 +8,6 @@ export const login = createAsyncThunk(
   async ({ email, password ,role }, thunkAPI) => {
     try {
       let foundUser = (role.value==="Student")?await  getDataSignIn(findStudent,{ params: {email: email.value}}):await  getDataSignIn(findInterviewer,{ params: {email: email.value}});
-      console.log(foundUser);
       if (foundUser.status ==="OLD_USER"){
           if (foundUser.res.data.password === password.value){            
              thunkAPI.dispatch(setMessage("SignIn successful"));
@@ -22,7 +21,6 @@ export const login = createAsyncThunk(
       }
       return { foundUser: foundUser };
     } catch (error) {
-      console.log("inside catch");
       const message =
         (error.response &&
           error.response.data &&
@@ -45,7 +43,6 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
-      console.log("inside logout");
       state.isLoggedIn = false;
       state.user = null;
       state.role = null;
@@ -53,10 +50,6 @@ const authSlice = createSlice({
   },
   extraReducers: {
     [login.fulfilled]: (state, action) => {
-      console.log("inside fullfilled");
-      console.log( action.payload.foundUser);
-      console.log( action.payload.status);
-      console.log(  action.payload.role);
       if (action.payload.status === "SIGNIN_TRUE" ){
         state.isLoggedIn = true;
         state.user = action.payload.foundUser.res.data;
@@ -65,7 +58,6 @@ const authSlice = createSlice({
       
     },
     [login.rejected]: (state, action) => {
-      console.log("inside reject");
       state.isLoggedIn = false;
       state.user = null;
       state.role = null;

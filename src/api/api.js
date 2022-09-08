@@ -25,7 +25,6 @@ export async function insertData(url, data) {
     }
   }
   export async function getDataAll(url) {
-    console.log("inside geDataAll try");
     try {
       let res = await axios.get(url);
       return { status: "success", res };
@@ -38,7 +37,6 @@ export async function insertData(url, data) {
   export async function getDataSignIn(url,data) {
     try {
       let res = await axios.get(url,data);
-      console.log(res.data);
       if(res.data){
         return { status: "OLD_USER", res };
       }else{
@@ -58,6 +56,17 @@ export async function updateData(url, data) {
     return { status: "success", res };
   } catch (err) {
     return { status: "failure", err: "Updating Data Failed" };
+  }
+}
+
+
+// Post Call
+export async function createOrder(url, data) {
+  try {
+    let res = await axios.post(url, data);
+    return { status: "success", res };
+  } catch (err) {
+    return { status: "failure", err: "Creating order Failed" };
   }
 }
 
